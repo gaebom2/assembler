@@ -23,14 +23,14 @@ int instr_trans(char *op, char *args, char* mcode)
 	}
 
 	token1=strtok(args,",");
-	tokne2=strtok(NUll," ");
+	token2=strtok(NULL," ");
 
 	//reg to reg
 	if(token1[0]=='%'&&token2[0]=='%')
 		strcpy(mcode, "89");
 	//mem to reg
 	else if(token1[0]=='('&&token2[0]=='%')
-		strcpy(mcode, "8b";
+		strcpy(mcode, "8b");
 	//mem to reg(eax)
 	else if(token1[0]=='0'&&token2[0]=='%')
 		strcpy(mcode," a1");
@@ -39,10 +39,22 @@ int instr_trans(char *op, char *args, char* mcode)
 		strcpy(mcode, "a3");
 	//imm to reg
 	else if(token1[0]=='$'&&token2[0]=='%')
-		
-	
-
-
+		if(strcmp(token2, "%eax")==0)
+			strcpy(mcode, "b8");
+		else if(strcmp(token2, "%ecx")==0)
+			strcpy(mcode, "b9");
+		else if(strcmp(token2, "%edx")==0)
+			strcpy(mcode, "ba");
+		else if(strcmp(token2, "%ebx")==0)
+			strcpy(mcode, "bb");
+		else if(strcmp(token2, "%esp")==0)
+			strcpy(mcode, "bc");
+		else if(strcmp(token2, "%ebp")==0)
+			strcpy(mcode, "bd");
+		else if(strcmp(token2, "%esi")==0)
+			strcpy(mcode, "be");
+		else if(strcmp(token2, "%edi")==0)
+			strcpy(mcode, "bf");
 
 	/********************************/
 	
