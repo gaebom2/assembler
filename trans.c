@@ -4,6 +4,7 @@ int instr_trans(char *op, char *args, char* mcode)
 {
 	char* token1;
 	char* token2;
+	char temp[256];
 	char* src;
 	char* dest;
 
@@ -17,13 +18,9 @@ int instr_trans(char *op, char *args, char* mcode)
 	strcpy(mcode, "AB CD EF");
 
 	/********************************/
-
-	if(!strcmp(op,"mov")) {
-		return 0;
-	}
-
-	token1=strtok(args,",");
-	token2=strtok(NULL," ");
+	strcmp(temp, args);
+	token1=strtok(temp,",");
+	token2=strtok(NULL,"\n");
 
 	//reg to reg
 	if(token1[0]=='%'&&token2[0]=='%')
