@@ -12,9 +12,17 @@ int instr_trans(char *op, char *args, char* mcode)
 	strcpy(mcode, "AB CD EF");
 
 	/********************************/
-    /*  							*/
+
 	/*    generate machine code     */
-    /*  							*/
+
+	if(!strcmp(op,"mov")) {
+		return 0;
+	}
+
+	
+
+
+
 	/********************************/
 	
 	return 1;	
