@@ -22,10 +22,11 @@ int instr_trans(char *op, char *args, char* mcode)
 		return 0;
 	}
 
-	strcpy(args, args);
 	token1=strtok(args,",");
 	tokne2=strtok(NUll," ");
 
+	if(token1[0]=='%'&&token2[0]=='%')
+		strcpy(mcode, "89")
 	
 
 
